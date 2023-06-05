@@ -111,6 +111,10 @@ function getRequestOptions() {
 
             if (proxyUser && proxyPwd) {
                 let auth = 'Basic ' + Buffer.from(proxyUser + ':' + proxyPwd).toString('base64');
+                let acceptssl = false;
+                if (process.env.INPUT_ACCEPTSSL) {
+                    acceptssl = true;
+                }
                 proxy = {
                     protocol: 'https:',
                     host: proxyHost, 
@@ -119,7 +123,8 @@ function getRequestOptions() {
                     password: proxyPwd,
                     headers: {
                         'Proxy-Authorization': auth
-                    }
+                    },
+                    acceptssl
                 }
             } else {
                 proxy = {
