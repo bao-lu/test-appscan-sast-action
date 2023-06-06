@@ -134,8 +134,7 @@ function getRequestOptions() {
             let host = (settings.getServiceUrl()).replace(/^(https?:|)\/\//, '');
             options = {
                 url: url.parse(endpoint),
-                host: host,
-                rejectUnauthorized: false
+                host: host
             };
         } else { // Normal connection without proxy
             options = url.parse(endpoint);
