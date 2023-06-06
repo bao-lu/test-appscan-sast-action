@@ -133,8 +133,9 @@ function getRequestOptions() {
         } else if (process.env.INPUT_ACCEPTSSL) { // Accept untrusted certs
             options = {
                 url: url.parse(endpoint),
+                host: settings.getServiceUrl(),
                 rejectUnauthorized: false,
-                port: 8080
+                port: 8443
             };
         } else { // Normal connection without proxy
             options = url.parse(endpoint);
