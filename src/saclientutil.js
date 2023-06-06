@@ -132,9 +132,12 @@ function getRequestOptions() {
             options.agent = new HttpsProxyAgent(proxy);
         } else if (process.env.INPUT_ACCEPTSSL) { // Accept untrusted certs
             let host = (settings.getServiceUrl()).replace(/^(https?:|)\/\//, '');
+            console.log("Host is: " + host);
+            console.log("Endpoint is: " + endpoint);
             options = {
-                url: url.parse(endpoint),
-                host: host
+                url: endpoint,
+                host: host,
+                rejectUnauthorized: false
             };
         } else { // Normal connection without proxy
             options = url.parse(endpoint);
