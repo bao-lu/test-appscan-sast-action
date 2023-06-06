@@ -131,9 +131,10 @@ function getRequestOptions() {
             options = url.parse(endpoint);
             options.agent = new HttpsProxyAgent(proxy);
         } else if (process.env.INPUT_ACCEPTSSL) { // Accept untrusted certs
+            let host = (settings.getServiceUrl()).replace(/^(https?:|)\/\//, '');
             options = {
                 url: url.parse(endpoint),
-                host: settings.getServiceUrl(),
+                host: host,
                 rejectUnauthorized: false,
                 port: 8443
             };
