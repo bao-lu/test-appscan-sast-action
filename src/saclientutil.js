@@ -138,6 +138,7 @@ function getRequestOptions() {
             options = {
                 url: url.parse(endpoint2),
                 host: host,
+                port: 443,
                 rejectUnauthorized: false
             };
         } else { // Normal connection without proxy
