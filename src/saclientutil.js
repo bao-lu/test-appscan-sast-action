@@ -134,9 +134,9 @@ function getRequestOptions() {
             let host = (settings.getServiceUrl()).replace(/^(https?:|)\/\//, '');
             let endpoint2 = settings.getServiceUrl() + constants.SACLIENT_PATH + utils.getOS();
             console.log("Host is: " + host);
-            console.log("Endpoint is: " + endpoint2);
+            console.log("Endpoint is: " + url.parse(endpoint2));
             options = {
-                url: endpoint2,
+                url: url.parse(endpoint2),
                 host: host,
                 rejectUnauthorized: false
             };
