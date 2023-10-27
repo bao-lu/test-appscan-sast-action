@@ -12,6 +12,6 @@ jobs:
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 36bf69fa-8a49-4b46-bf40-86a72ebdefe0
-          service_url: https://ascp-02-as360-sast-dev.eastus.cloudapp.azure.com
+          application_id: 6e3afc47-4ae2-43e3-b458-6831f5792abb
+          service_url: https://ascp-01-dev-as360-sast.eastus.cloudapp.azure.com
           acceptssl: true
