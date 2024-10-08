@@ -12,6 +12,6 @@ jobs:
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 6e3afc47-4ae2-43e3-b458-6831f5792abb
+          application_id: 733e46bf-051d-49b4-8c82-68bda34f6053
           service_url: https://ascp1.ascpv2.com
           acceptssl: true
